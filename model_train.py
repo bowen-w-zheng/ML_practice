@@ -1,4 +1,6 @@
 import helper_funcs
+from torch import cuda.is_available
+device = "cuda" if cuda.is_available() else "cpu"
 
 def train_step(model: torch.nn.Module,
                data_loader: torch.utils.data.DataLoader,
